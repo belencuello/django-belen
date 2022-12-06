@@ -1,0 +1,18 @@
+from django import form 
+
+from .models import Cliente 
+
+class ClienteForm(forms.ModelForm):
+    """Form definition for Cliente."""
+
+    class Meta:
+        """Meta definition for Clienteform."""
+
+        model = Cliente
+        fields = ('apellidos',
+                  'nombres',
+                  'nombre_completo',
+                  )#campos para crear a los clientes
+        widgest = {
+            'habilidades': forms.CheckbockSelectMultiple()#si queremos elegir varias hbilidades
+        }
